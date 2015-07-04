@@ -10,6 +10,8 @@ class Controller_Main extends Controller
     {	
        echo $this->view->render('main.html.twig');
     }
+    
+    
     function action_avtoriz()
     {
 //        $this->model->avtoriz();
