@@ -6,13 +6,13 @@ use Routing\RouterTrait;
 try {
     $router = new Router(RouterTrait::GET_HTTP_HOST());
 
-    $router->add('main', '/main', 'controller_main:action_index' , 'GET|POST');
-    $router->add('services', '/services', 'controller_services:action_index' , 'GET|POST');
-    $router->add('contacts', '/contacts', 'controller_contacts:action_index' , 'GET|POST');
-    $router->add('portfolio', '/portfolio', 'controller_portfolio:action_index' , 'GET|POST');
+    $router->add('main', '/', 'controller_main:action_index' , 'GET|POST');
+    $router->add('main/avtoriz', '/main/avtoriz', 'controller_main:action_avtoriz' , 'GET|POST');
+    $router->add('services', '/services', 'controller_services:action_index');
+    $router->add('contacts', '/contacts', 'controller_contacts:action_index');
+    $router->add('portfolio', '/portfolio', 'controller_portfolio:action_index');
     $router->add('admin', '/admin', 'controller_admin:action_index' , 'GET|POST');
-    $router->add('404', '/404', 'controller_404:action_index' , 'GET|POST');
-   
+
 
     $route = $router->match(RouterTrait::GET_METHOD(), RouterTrait::GET_PATH_INFO());
 
